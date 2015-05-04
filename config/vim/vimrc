@@ -1,0 +1,55 @@
+" Basic options
+let mapleader=","
+set t_Co=256 " More colors
+
+set encoding=utf-8
+set showcmd         " Count highlighted
+set ruler           " Show where I am in the command area
+set colorcolumn=80  " Vertical ruler at 80 characters
+set laststatus=2    " Always show the status line
+
+set vb	            " Disables buzzer
+set scrolloff=3     " Start scrolling when I'm 3 lines from top/bottom
+set backspace=2     " Backspace over indent, eol, and insert
+set mousehide       " Hide the mouse pointer while typing
+
+set relativenumber          " Show linenumbers
+set nowrap          " Turn off linewrap
+set tabstop=4       " 4 spaces
+set shiftwidth=4    " 4 spaces
+set softtabstop=4   " 4 spaces
+set expandtab       " Expand tabs to spaces
+
+set hlsearch        " highlight my search
+set incsearch       " incremental search
+set wrapscan        " Set the search scan to wrap around the file
+set ignorecase      " when searching
+set smartcase       " …unless I use an uppercase character
+
+set showmatch       " show matching brackets
+set mat=2
+
+syntax on           " Syntax highlighting
+syntax sync minlines=256 " Makes big files slow
+set synmaxcol=2048  " Also long lines are slow
+
+filetype plugin on
+filetype indent on
+
+set fileformats=unix,dos,mac
+
+" Colorscheme
+set background=dark
+
+" Solarized options
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+let g:solarized_termcolors=256
+colorscheme solarized
+
+" GUI Font
+" https://github.com/adobe-fonts/source-code-pro
+set guifont=Source\ Code\ Pro\ 14
+
+set clipboard=unnamed " OSX clipoard
+
