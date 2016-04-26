@@ -45,17 +45,36 @@ brew install tree
 brew install caskroom/cask/brew-cask
 
 # Install GUI programs with cask
-brew cask install calibre
-brew cask install flux
-brew cask install electric-sheep
+brew cask install sublime-text-3
+brew cask install caskroom/fonts/font-hack
+brew cask install virtualbox
+brew cask install rowanj-gitx
+brew cask install genymotion
+brew cask install android-studio
+brew cask install atom
 brew cask install iterm2
-brew cask install menumeters
+
+brew cask install malwarebytes-anti-malware
+brew cask install appcleaner
+
+brew cask install bettertouchtool
+brew cask install alfred
+brew cask install flux
+brew cask install insomniax
+brew cask install xscope
+
+brew cask install slack
+
+brew cask install google-chrome
+brew cask install skype
+brew cask install android-file-transfer
+brew cask install the-unarchiver
+brew cask install google-drive
+brew cask install sketch
+brew cask install spotify
 brew cask install steam
 brew cask install vlc
-brew cask install google-chrome
-brew cask install alfred
-brew cask install sublime-text-3
-brew cask install bettertouchtool
+brew cask install vimediamanager
 
 # Remove outdated versions from the cellar.
 brew cleanup
