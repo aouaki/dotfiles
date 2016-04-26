@@ -30,7 +30,8 @@ brew install zsh
 brew install wget --with-iri
 
 # Install more recent versions of some OS X tools.
-brew install vim --override-system-vi
+brew install macvim --with-override-system-vim --with-cscope --with-lua
+brew install neovim
 brew install homebrew/dupes/grep
 
 # Install other useful binaries.

@@ -22,8 +22,10 @@ fi
 cp -r config/ ~/.config
 
 echo "source $HOME/.config/vim/vimrc" > ~/.vimrc
-echo "source $HOME/.config/vim/plugins" >> ~/.vimrc
-echo "source $HOME/.config/vim/shortcuts" >> ~/.vimrc
+echo "source $HOME/.config/vim/plugins.vim" >> ~/.vimrc
+echo "source $HOME/.config/vim/shortcuts.vim" >> ~/.vimrc
+ln -s ~/.vim $HOME/.config/nvim
+
 
 echo "Install vim plugins."
 mkdir -p ~/.vim/bundle

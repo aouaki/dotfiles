@@ -5,7 +5,7 @@ set t_Co=256 " More colors
 set encoding=utf-8
 set showcmd         " Count highlighted
 set ruler           " Show where I am in the command area
-set colorcolumn=80  " Vertical ruler at 80 characters
+set colorcolumn=100  " Vertical ruler at 100 characters
 set laststatus=2    " Always show the status line
 
 set vb	            " Disables buzzer
@@ -13,7 +13,7 @@ set scrolloff=3     " Start scrolling when I'm 3 lines from top/bottom
 set backspace=2     " Backspace over indent, eol, and insert
 set mousehide       " Hide the mouse pointer while typing
 
-set relativenumber          " Show linenumbers
+set relativenumber  " Show linenumbers
 set nowrap          " Turn off linewrap
 set tabstop=4       " 4 spaces
 set shiftwidth=4    " 4 spaces
@@ -32,6 +32,12 @@ set mat=2
 syntax on           " Syntax highlighting
 syntax sync minlines=256 " Makes big files slow
 set synmaxcol=2048  " Also long lines are slow
+
+set wildmode=longest,list,full " Set zsh-style auto-completion
+set wildignore=.git,*.swp,*.pyc
+set wildmenu                   " Set zsh-style auto-completion
+
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1 " pipe style cursor
 
 filetype plugin on
 filetype indent on
@@ -53,3 +59,34 @@ set guifont=Source\ Code\ Pro\ 14
 
 set clipboard=unnamed " OSX clipoard
 
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_python_enabled_makers = ['flake8']
+autocmd! BufWritePost * Neomake
+
+" Adds jsx syntax support in .js files too
+let g:jsx_ext_required = 0
+
+let g:ctrlp_custom_ignore = { 
+            \ 'dir': 'node_modules',
+            \ 'file': '\v\.(png|psd)$',
+            \ }
+
+            let g:multi_cursor_next_key='<C-b>'
+
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" Ask confirmation before closing last window
+if has('gui_running')
+    cabbrev q <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'close' : 'q')<CR>
+    cabbrev wq <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'w\|close' : 'wq')<CR>
+endif
+
+" 0 goes to first non-blank character
+nnoremap 0 ^
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+let g:tern_request_timeout = 1
+let g:tern_show_signature_in_pum = 0  " This do disable full signature type on autocomplete
+let deoplete#sources#jedi#show_docstring = 1 " show python docstrings

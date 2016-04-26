@@ -1,0 +1,11 @@
+" Use the Solarized Dark theme
+"set background=dark
+colorscheme solarized
+highlight Normal guibg=#252525
+highlight LineNr  guibg=#333233
+highlight ColorColumn guibg=#333233
+" Use 13pt Hack
+set guifont=Hack:h13
+" Remove scrollbars
+set guioptions=b
+

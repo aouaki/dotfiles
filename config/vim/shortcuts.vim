@@ -5,9 +5,6 @@ noremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-" Moves around split windows
-nnoremap <leader>w <C-w><C-w>
-
 " NerdTree
 map <leader>nn :NERDTree<cr>
 
@@ -21,9 +18,6 @@ set statusline=%f " Path.
 set statusline+=%m " Modified flag.
 set statusline+=%r " Readonly flag.
 set statusline+=%w " Preview window flag.
-set statusline+=%#warningmsg# " Syntastic
-set statusline+=%{SyntasticStatuslineFlag()} "Syntastic
-set statusline+=%* " ??? (Syntastic)
 set statusline+=\ " Space.
 set statusline+=%= " Right align.
 " Line and column position and counts.
