@@ -54,6 +54,13 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 echo "Install software using Homebrew."
 ./brew.sh
 
+echo "Installing pip"
+curl https://bootstrap.pypa.io/get-pip.py /tmp/get-pip.py
+python /tmp/get-pip.py
+python3 /tmp/get-pip.py
+
+pip3 install neovim
+
 echo "Change default shell to zsh."
 chsh -s /bin/zsh
 

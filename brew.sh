@@ -29,6 +29,10 @@ brew install zsh
 # Install `wget` with IRI support.
 brew install wget --with-iri
 
+# Install python
+brew install python
+brew install python3
+
 # Install more recent versions of some OS X tools.
 brew install macvim --with-override-system-vim --with-cscope --with-lua
 brew install neovim
@@ -78,3 +82,6 @@ brew cask install vimediamanager
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+brew linkapps
+
