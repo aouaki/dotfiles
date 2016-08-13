@@ -21,10 +21,11 @@ sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed --with-default-names
-# Install zsh
+# Install zsh + tmux
 # Note: don’t forget to add `/usr/local/bin/zsh` to `/etc/shells` before
 # running `chsh`.
 brew install zsh
+brew install tmux
 
 # Install `wget` with IRI support.
 brew install wget --with-iri
