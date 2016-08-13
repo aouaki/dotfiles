@@ -1118,13 +1118,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.17255082726478577</real>
+				<real>0.64317417144775391</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.17254787683486938</real>
+				<real>0.82956779003143311</real>
 				<key>Red Component</key>
-				<real>0.17255303263664246</real>
+				<real>0.91004878282546997</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -1568,7 +1568,7 @@
 			<key>Silence Bell</key>
 			<true/>
 			<key>Smart Cursor Color</key>
-			<true/>
+			<false/>
 			<key>Smart Selection Rules</key>
 			<array>
 				<dict>
@@ -1988,13 +1988,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.17255082726478577</real>
+				<real>0.64317417144775391</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.17254787683486938</real>
+				<real>0.82956779003143311</real>
 				<key>Red Component</key>
-				<real>0.17255303263664246</real>
+				<real>0.91004878282546997</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -2459,7 +2459,7 @@
 			<key>Silence Bell</key>
 			<true/>
 			<key>Smart Cursor Color</key>
-			<true/>
+			<false/>
 			<key>Smart Selection Rules</key>
 			<array>
 				<dict>
