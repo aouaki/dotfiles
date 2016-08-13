@@ -101,12 +101,6 @@ rationalise-dot() {
 zle -N rationalise-dot
 bindkey . rationalise-dot
 
-## Git Aliases
-alias git="LANG=en_US git"
-alias gt="git status"
-alias gco="git checkout"
-alias gui="git gui"
-
 # Usability binds
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
