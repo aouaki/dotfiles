@@ -38,6 +38,7 @@ set wildignore=.git,*.swp,*.pyc
 set wildmenu                   " Set zsh-style auto-completion
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1 " pipe style cursor
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1 " True color
 
 filetype plugin on
 filetype indent on
@@ -46,32 +47,25 @@ set fileformats=unix,dos,mac
 
 " Colorscheme
 set background=dark
-
-" Solarized options
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-let g:solarized_termcolors=256
-colorscheme solarized
-
-" GUI Font
-" https://github.com/adobe-fonts/source-code-pro
-set guifont=Source\ Code\ Pro\ 14
+let g:gruvbox_italic=1
+colorscheme gruvbox
 
 set clipboard=unnamed " OSX clipoard
 
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_python_enabled_makers = ['flake8']
-autocmd! BufWritePost * Neomake
+let g:neomake_scss_enabled_makers = ['scsslint']
+autocmd! BufWritePost,BufWinEnter * Neomake
 
 " Adds jsx syntax support in .js files too
 let g:jsx_ext_required = 0
 
-let g:ctrlp_custom_ignore = { 
+let g:ctrlp_custom_ignore = {
             \ 'dir': 'node_modules',
             \ 'file': '\v\.(png|psd)$',
             \ }
 
-            let g:multi_cursor_next_key='<C-b>'
+            let g:multi_cursor_next_key='<C-x>'
 
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
@@ -82,11 +76,24 @@ if has('gui_running')
     cabbrev wq <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'w\|close' : 'wq')<CR>
 endif
 
-" 0 goes to first non-blank character
-nnoremap 0 ^
-
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = 0  " This do disable full signature type on autocomplete
 let deoplete#sources#jedi#show_docstring = 1 " show python docstrings
+let g:deoplete#file#enable_buffer_path = 1 " Use edited file dir for file completion
+
+" Status line --------------------------------------------------------- {{{
+augroup ft_statuslinecolor
+        au!
+        au InsertEnter * hi StatusLine ctermfg=196 guifg=#FF3145
+        au InsertLeave * hi StatusLine ctermfg=130 guifg=#CD5907
+augroup END
+set statusline=%f " Path.
+set statusline+=%m " Modified flag.
+set statusline+=%r " Readonly flag.
+set statusline+=%w " Preview window flag.
+set statusline+=\ " Space.
+set statusline+=%= " Right align.
+" Line and column position and counts.
+set statusline+=\ (line\ %l\/%L,\ col\ %03c)
