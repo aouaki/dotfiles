@@ -1,32 +1,61 @@
-" Vundle integration
-set nocompatible              " required
-filetype off                  " required
+" Note: Skip initialization for vim-tiny or vim-small.
+if 0 | endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+if &compatible
+  set nocompatible               " Be iMproved
+ endif
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'airblade/vim-gitgutter'           " Git gutter
-Plugin 'Shougo/deoplete.nvim'             " Auto Completion
-Plugin 'carlitux/deoplete-ternjs'         " Tern (JS) completion for deoplete
-Plugin 'zchee/deoplete-jedi'              " Jedi (Python) completion for deoplete
-Plugin 'Shougo/neoinclude.vim'            " Include completion
-Plugin 'morhetz/gruvbox'                  " Colorscheme
-Plugin 'tpope/vim-fugitive'               " Git integration
-Plugin 'scrooloose/nerdtree'              " File tree
-Plugin 'benekastah/neomake'               " Async make
-Plugin 'terryma/vim-multiple-cursors'     " Multiple Cursors
-Plugin 'ctrlpvim/ctrlp.vim'               " CtrlP
-Plugin 'spolu/dwm.vim'                    " Window management
-Plugin 'pangloss/vim-javascript'          " Javascript syntax support
-Plugin 'mxw/vim-jsx'                      " JSX syntax support
-Plugin 'ap/vim-css-color'                 " CSS color highlighting
-Plugin 'wellle/targets.vim'               " Additional text objects
-Plugin 'airblade/vim-rooter'              " Change cwd to project root
-Plugin 'justinmk/vim-sneak'               " Cursor motoin
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Required:
+set runtimepath^=~/.vim/bundle/neobundle.vim/
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles:
+" Git gutter
+NeoBundle 'airblade/vim-gitgutter'
+" Auto Completion
+NeoBundle 'Shougo/deoplete.nvim'
+" Tern (JS) completion for deoplete
+NeoBundle 'carlitux/deoplete-ternjs', {'build': {'mac': 'npm install -g tern', 'unix': 'npm install -g tern'}}
+" Jedi (Python) completion for deoplete
+NeoBundle 'zchee/deoplete-jedi'
+" Include completion
+NeoBundle 'Shougo/neoinclude.vim'
+" Colorscheme
+NeoBundle 'morhetz/gruvbox'
+" File tree
+NeoBundle 'scrooloose/nerdtree'
+" Async make
+NeoBundle 'benekastah/neomake', {'build': {'mac': 'npm install -g eslint eslint-plugin-import esling-plugin-import-order eslint-plugin-react flow-bin flow-vim-quickfix', 'unix': 'npm install -g eslint eslint-plugin-import esling-plugin-import-order eslint-plugin-react flow-bin flow-vim-quickfix'}}
+" Multiple Cursors
+NeoBundle 'terryma/vim-multiple-cursors'
+" CtrlP
+NeoBundle 'ctrlpvim/ctrlp.vim'
+" Window management
+NeoBundle 'spolu/dwm.vim'
+" Javascript syntax support
+NeoBundle 'pangloss/vim-javascript'
+" JSX syntax support
+NeoBundle 'mxw/vim-jsx'
+" CSS color highlighting
+NeoBundle 'ap/vim-css-color'
+" Additional text objects
+NeoBundle 'wellle/targets.vim'
+" Change cwd to project root
+NeoBundle 'airblade/vim-rooter'
+" Cursor motoin
+NeoBundle 'justinmk/vim-sneak'
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck

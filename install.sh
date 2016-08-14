@@ -26,12 +26,6 @@ echo "source $HOME/.config/vim/plugins.vim" >> ~/.vimrc
 echo "source $HOME/.config/vim/shortcuts.vim" >> ~/.vimrc
 ln -s ~/.vim $HOME/.config/nvim
 
-
-echo "Install vim plugins."
-mkdir -p ~/.vim/bundle
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +BundleInstall +qall
-
 echo "Install oh-my-zsh."
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.config/oh-my-zsh
 
@@ -54,12 +48,18 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 echo "Install software using Homebrew."
 ./brew.sh
 
-echo "Installing pip"
+echo "Install pip"
 curl https://bootstrap.pypa.io/get-pip.py /tmp/get-pip.py
 python /tmp/get-pip.py
 python3 /tmp/get-pip.py
 
+echo "Install pip packages"
 pip3 install neovim
+
+echo "Install vim plugins."
+mkdir -p ~/.vim/bundle
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+vim +NeoBundleInstall +qall
 
 echo "Change default shell to zsh."
 chsh -s /bin/zsh
