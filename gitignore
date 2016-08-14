@@ -12,3 +12,12 @@ Thumbs.db
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+
+# Tern Port file
+.tern-port
+
+# Virtualenv
+venv
+
+# Vim swap
+*.swp
