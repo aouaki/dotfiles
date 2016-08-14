@@ -28,6 +28,5 @@ Plugin 'ap/vim-css-color'                 " CSS color highlighting
 Plugin 'wellle/targets.vim'               " Additional text objects
 Plugin 'airblade/vim-rooter'              " Change cwd to project root
 Plugin 'justinmk/vim-sneak'               " Cursor motoin
-Plugin 'flowtype/vim-flow'                " Solution while neomake + flow isn't working
 call vundle#end()            " required
 filetype plugin indent on    " required

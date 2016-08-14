@@ -52,7 +52,15 @@ colorscheme gruvbox
 
 set clipboard=unnamed " OSX clipoard
 
-let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_flow_maker = {
+      \ 'exe': 'sh',
+      \ 'args': ['-c', 'flow --json | flow-vim-quickfix'],
+      \ 'errorformat': '%E%f:%l:%c\,%n: %m',
+      \ 'cwd': '%:p:h' 
+      \ }
+let g:neomake_javascript_enabled_makers = ['flow', 'eslint']
+let g:neomake_jsx_enabled_makers = ['flow', 'eslint']
+
 let g:neomake_python_enabled_makers = ['flake8']
 let g:neomake_scss_enabled_makers = ['scsslint']
 autocmd! BufWritePost,BufWinEnter * Neomake
