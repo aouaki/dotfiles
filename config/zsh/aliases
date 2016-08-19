@@ -91,3 +91,18 @@ alias pingg="ping google.fr"
 alias vim='nvim'
 alias :e='nvim'
 alias :q='exit'
+
+# Virtualenv
+
+_setvenv() {
+    source ${1}venv/bin/activate && export PS1="(${PWD##*/})$_OLD_VIRTUAL_PS1";
+}
+
+sv() {
+    if $(git rev-parse --show-toplevel 2>/dev/null);
+        then _setvenv $(git rev-parse --show-toplevel)/;
+        else _setvenv;
+    fi;
+}
+
+alias mkvirtualenv="virtualenv venv";

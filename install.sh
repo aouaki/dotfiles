@@ -55,6 +55,7 @@ python3 /tmp/get-pip.py
 
 echo "Install pip packages"
 pip3 install neovim
+pip install virtualenv
 
 echo "Install vim plugins."
 mkdir -p ~/.vim/bundle
