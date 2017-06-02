@@ -36,6 +36,7 @@ brew install python3
 
 # Install Node.js
 brew install node
+brew install yarn
 
 # Install more recent versions of some OS X tools.
 brew install macvim --with-override-system-vim --with-cscope --with-lua

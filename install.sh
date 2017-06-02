@@ -62,6 +62,9 @@ mkdir -p ~/.vim/bundle
 git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 vim +NeoBundleInstall +qall
 
+echo "Install npm packages."
+yarn global add ios-deploy
+
 echo "Change default shell to zsh."
 chsh -s /bin/zsh
 
