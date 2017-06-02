@@ -45,6 +45,7 @@ brew install homebrew/dupes/grep
 # Install other useful binaries.
 brew install ack
 brew install git
+brew install hub
 brew install imagemagick --with-webp
 brew install cmake
 brew install tree
@@ -88,4 +89,3 @@ brew cask install vimediamanager
 brew cleanup
 
 brew linkapps
-

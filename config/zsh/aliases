@@ -1,5 +1,6 @@
 # Git Aliases
-alias git="LANG=en_US git"
+alias git="LANG=en_US hub"
+alias gut="git"
 alias gt="git status"
 alias gco="git checkout"
 alias gui="git gui"
