@@ -70,7 +70,6 @@ brew cask install bettertouchtool
 brew cask install alfred
 brew cask install flux
 brew cask install insomniax
-brew cask install slack
 brew cask install google-chrome
 brew cask install skype
 brew cask install android-file-transfer
@@ -80,6 +79,7 @@ brew cask install spotify
 brew cask install steam
 brew cask install vlc
 brew cask install vimediamanager
+brew cask install station
 
 # Remove outdated versions from the cellar.
 brew cleanup
